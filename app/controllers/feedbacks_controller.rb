@@ -1,9 +1,9 @@
 class FeedbacksController < ApplicationController
-  #paginates_per 10
-
+ 
   def new
     @feedback = Feedback.new
     authorize @feedback
+    @user = UserDecorator.decorate(current_user)
   end
 
   def create
@@ -16,7 +16,7 @@ class FeedbacksController < ApplicationController
   end
 
   def index
-    @feedbacks = Feedback.search(params[:search])
+    @feedbacks = Feedback.search(params[:search]).page(params[:page])
     authorize @feedbacks
   end
 

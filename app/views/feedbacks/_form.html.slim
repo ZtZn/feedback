@@ -6,13 +6,28 @@
         - @feedback.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :name
-    = f.text_field :name, value: @user.full_name
-  .field
-    = f.label :email
-    = f.text_field :email, value: @user.email
-  .field
-    = f.label :text
-    = f.text_area :text
-    = f.submit "Submit feedback"
+  .row
+    .small-5
+      .row
+        .small-3.columns
+          = f.label :name
+        .small-9.columns
+          = f.text_field :name, value: @user.full_name
+  .row
+    .small-5
+      .row
+        .small-3.columns
+          = f.label :email
+        .small-9.columns
+          = f.text_field :email, value: @user.email
+  .row
+    .small-5
+      .row
+        .small-3.columns
+          = f.label :text
+        .small-9.columns
+          = f.text_area :text
+  .row
+    .small-5
+      .float-right
+        = f.submit "Submit feedback"

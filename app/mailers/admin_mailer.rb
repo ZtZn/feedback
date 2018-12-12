@@ -4,6 +4,6 @@ class AdminMailer < ApplicationMailer
 
   def feedback(feedback)
     @feedback = feedback
-    mail(to: @feedback.email, subject: 'feedback')
+    mail(to: @feedback.email, subject: "feedback")
   end
 end

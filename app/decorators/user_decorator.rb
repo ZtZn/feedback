@@ -6,10 +6,10 @@ class UserDecorator < ApplicationDecorator
   end
 
   def full_name
-    object.full_name unless object.nil?
+    object&.full_name
   end
 
   def email
-    object.email unless object.nil?
+    object&.email
   end
 end

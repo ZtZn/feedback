@@ -8,7 +8,7 @@ class FeedbackPolicy < ApplicationPolicy
   end
 
   def index?
-    true if user.present? && user.role == 'admin'
+    true if user.present? && user.role == "admin"
   end
 
   def update?

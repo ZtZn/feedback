@@ -1,17 +1,15 @@
-h1 Listing feedbacks
+.row
+  h1 Listing feedbacks
 
-table
-  thead
-    tr
-      th Name
-      th Email
-      th Text
-  = form_tag(feedbacks_path, method: :get) do
-    = text_field_tag :search, params[:search], placeholder: 'Enter your search query here'
-    = submit_tag 'Search'
-
-
-  tbody
+== render 'search'
+.row
+  table
+    thead
+      tr
+        th Name
+        th Email
+        th Text
+    tbody
     - @feedbacks.each do |feedback|
       tr
         td = feedback.name
